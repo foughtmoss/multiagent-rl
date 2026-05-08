@@ -73,5 +73,10 @@ At each tick, agents interact according to the following rules:
 ### 1vs1
 To evaluate the Learner’s adaptability in isolation, a single Learner is paired exclusively with one fixed-type agent for
 10000 episodes. This controlled setup removes population level confounds and highlights the pure learning dynamics against each opponent type.
+
+Against cooperator, defector and titfortat the agent learns the optimal policies while against another learner there is instability due to instable updatings.
+
 ### Heterogeneous Population
 To evaluate the Learner in a more realistic setting, the experiment is extended to a population of 40 agents: 10 Cooperators, 10 Defectors, 10 TitForTat, and 10 Learners. At each tick agents are randomly paired across the entire population, so each Learner faces all opponent types throughout training. The experiment runs for 20 000 episodes.
+
+
