@@ -96,7 +96,7 @@ To have more complex strategies I added new types of agents in addition to the o
 
 The previous flat simulation pairs agents uniformly at random, which implicitly assumes a well-mixed population but real interaction networks are rarely well-mixed. To study the agents beahviours in a more realistic way I build a Netlogo-like toroidal grid (30x30 by default). Each cell holds at most one agent. The grid keeps also a scalar pheromones field. All the agents, a part from the pheromones, move to a random neighbour cell. Pheromones agents moves to the empty neighbour with heighest pheromone level. If the level is not high enough, they move as the other agents by performing a random wiggle. After movement, each agent selects one random neighbour to play against; agents with no occupied neighbours skip the tick. Pairs are resolved without repetition within the same tick.
 
-[▶ Watch demo](video/spatial_env_demo.mp4)
+![Demo](video/spatial_env_demo.gif)
 
 
 
