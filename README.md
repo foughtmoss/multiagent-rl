@@ -22,11 +22,45 @@ The methodology is divided into four main phases:
 
 ![Procedure](images/procedure.png)
 
-## Design Phase 1: Agents
+## Design Phase 1
+
+### Agents
 
 - **Cooperator**: always cooperates, regardless of the opponent’s actions.  
 - **Defector**: always defects in every interaction.  
 - **Tit-for-Tat**: starts by cooperating and then mirrors the opponent’s previous action.  
-- **Learner (Q-learning agent)**: selects actions based on a Q-table, conditioned on the identity of the current partner, in order to learn optimal strategies over time.
+- **Learner (Q-learning agent)**: selects actions based on a Q-table conditioned on the identity of the current partner, allowing it to learn optimal strategies over time.
 
+---
 
+### Learner: State, Q-tables, and Reward Function
+
+#### State representation
+The state is defined as a tuple:
+
+\[
+(own\_last\_action, partner\_last\_action)
+\]
+
+where each action can be either **cooperate (0)** or **defect (1)**.
+
+#### Action space
+- 0 = cooperate  
+- 1 = defect  
+
+#### Reward function
+The reward is determined by the standard Prisoner’s Dilemma payoff matrix, based on the joint actions of both agents.
+
+#### Q-tables
+Each learner maintains a separate Q-table for each opponent:
+
+\[
+Q = \{ \text{partner\_id} : Q\text{-table} \}
+\]
+
+This design allows the agent to adapt its strategy depending on the specific opponent it interacts with.
+
+#### Update
+\[
+Q(s,a) \leftarrow Q(s,a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s,a) \right]
+\]
