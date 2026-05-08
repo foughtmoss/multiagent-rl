@@ -4,8 +4,6 @@
 
 This project, developed for the Distributed Artificial Intelligence exam, investigates whether learning agents can infer optimal strategies when interacting in a multi-agent environment based on the Iterated Prisoner’s Dilemma.
 
----
-
 ## Procedure
 
 The methodology is divided into four main phases:
@@ -22,15 +20,11 @@ The methodology is divided into four main phases:
 4. **Experiments in Spatial Environment**  
    Final experiments conducted in the spatial setting to analyse how environmental structure affects learning and strategy formation.
 
----
-
 ![Procedure](images/procedure.png)
 
----
+## Design Phase 1
 
-# Design Phase 1
-
-## Agents
+### Agents
 
 - **Cooperator**: always cooperates, regardless of the opponent’s actions.  
 - **Defector**: always defects in every interaction.  
@@ -39,12 +33,33 @@ The methodology is divided into four main phases:
 
 ---
 
-## Learner: State, Q-tables, and Reward Function
+### Learner: State, Q-tables, and Reward Function
 
-### State representation
-```text
-state = (own_last_action, partner_last_action)
+#### State representation
+The state is defined as a tuple:
 
-where:
-- own_last_action ∈ {0, 1}
-- partner_last_action ∈ {0, 1}
+`(own_last_action, partner_last_action)`
+
+where each action can be either **cooperate (0)** or **defect (1)**.
+
+#### Action space
+- 0 = cooperate  
+- 1 = defect  
+
+#### Reward function
+The reward is determined by the standard Prisoner’s Dilemma payoff matrix, based on the joint actions of both agents.
+
+#### Q-tables
+Each learner maintains a separate Q-table for each opponent:
+
+`Q = {partner_id : Q-table}`
+
+This design allows the agent to adapt its strategy depending on the specific opponent it interacts with.
+
+#### Update
+\[
+Q(s,a) \leftarrow Q(s,a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s,a) \right]
+\]
+
+
+state e qtable lo devi fare come se fosse codice, la formula di update non viene visualizzata correttamente nel readme
