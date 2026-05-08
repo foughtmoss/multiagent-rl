@@ -21,3 +21,5 @@ The methodology is divided into four main phases:
    Final experiments conducted in the spatial setting to analyse how environmental structure affects learning and strategy formation.
 
 ![Procedure](images/procedure.png)
+
+## Design Phase 1: Agents
