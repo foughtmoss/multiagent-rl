@@ -59,3 +59,13 @@ This design allows the agent to adapt its strategy depending on the specific opp
 
 #### Update
 `Q(s, a) ← Q(s, a) + α [ r + γ * max(Q(s', a')) − Q(s, a) ]`
+
+---
+### Flat Environment
+At each tick, agents interact according to the following rules:
+
+- **Pairing**: At each tick, agents are randomly paired across the population and each pair plays one round of the Prisoner’s Dilemma.  
+- **Episode**: An episode consists of 200 ticks.  
+- **Reset**: Scores are reset at the end of each episode, while Q-tables and partner interaction histories are preserved.
+
+---
