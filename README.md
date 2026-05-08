@@ -59,6 +59,3 @@ This design allows the agent to adapt its strategy depending on the specific opp
 
 #### Update
 `Q(s, a) ← Q(s, a) + α [ r + γ * max(Q(s', a')) − Q(s, a) ]`
-
-
-state e qtable lo devi fare come se fosse codice, la formula di update non viene visualizzata correttamente nel readme
