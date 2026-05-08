@@ -48,6 +48,7 @@ where each action can be either **cooperate (0)** or **defect (1)**.
 
 #### Reward function
 The reward is determined by the standard Prisoner’s Dilemma payoff matrix, based on the joint actions of both agents.
+![Procedure](images/payoff.png)
 
 #### Q-tables
 Each learner maintains a separate Q-table for each opponent:
