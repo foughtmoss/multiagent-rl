@@ -82,4 +82,15 @@ To evaluate the Learner in a more realistic setting, the experiment is extended 
 
 The experiment confirm that a Q-learning agent with a minimal state representation is capable of inferring and adopting opponent-specific strategies without any prior knowledge of the partner’s type.
 
+---
+
+## Design Phase 2
+
+### New Agents
+To have more complex strategies I added new types of agents in addition to the old ones:
+- **Unforgiving**: cooperates until the partner defect once, after that single defection it switches permanently to defection against that partner.  
+- **Pheromones**: combines local signaling with conditional cooperation. 
+- **Tit-for-Tat**: extends learner state by memorizing the last `h` actions of each partner.
+
+### Spatial Environment
 
