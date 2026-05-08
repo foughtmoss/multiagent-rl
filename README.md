@@ -57,9 +57,7 @@ Each learner maintains a separate Q-table for each opponent:
 This design allows the agent to adapt its strategy depending on the specific opponent it interacts with.
 
 #### Update
-\[
-Q(s,a) \leftarrow Q(s,a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s,a) \right]
-\]
+`Q(s, a) ← Q(s, a) + α [ r + γ * max(Q(s', a')) − Q(s, a) ]`
 
 
 state e qtable lo devi fare come se fosse codice, la formula di update non viene visualizzata correttamente nel readme
