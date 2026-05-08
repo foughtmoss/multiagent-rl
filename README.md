@@ -23,3 +23,10 @@ The methodology is divided into four main phases:
 ![Procedure](images/procedure.png)
 
 ## Design Phase 1: Agents
+
+- **Cooperator**: always cooperates, regardless of the opponent’s actions.  
+- **Defector**: always defects in every interaction.  
+- **Tit-for-Tat**: starts by cooperating and then mirrors the opponent’s previous action.  
+- **Learner (Q-learning agent)**: selects actions based on a Q-table, conditioned on the identity of the current partner, in order to learn optimal strategies over time.
+
+
